@@ -39,15 +39,14 @@ encrypted_password<y:LabelModel>
     <node id="n1">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="146.79999999999995" width="99.19999999999999" x="150.4" y="176.60000000000002"/>
+          <y:Geometry height="146.79999999999995" width="99.19999999999999" x="150.4" y="201.60000000000002"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="38.072265625" x="30.563867187499994" y="4.0">Movie</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="74.6640625" modelName="custom" textColor="#000000" visible="true" width="86.623046875" x="2.0" y="30.1328125">title
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="60.53125" modelName="custom" textColor="#000000" visible="true" width="86.623046875" x="2.0" y="30.1328125">title
 year
 contributor_id
-review_id
-view_count<y:LabelModel>
+review_id<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -63,14 +62,13 @@ view_count<y:LabelModel>
     <node id="n2">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="90.0" width="80.0" x="660.0" y="130.0"/>
+          <y:Geometry height="118.15999999999997" width="80.0" x="710.0" y="140.92000000000002"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="43.884765625" x="18.0576171875" y="4.0">Review</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="60.53125" modelName="custom" textColor="#000000" visible="true" width="68.51171875" x="2.0" y="30.1328125">body
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="46.3984375" modelName="custom" textColor="#000000" visible="true" width="46.181640625" x="2.0" y="30.1328125">body
 rating
-user_id
-view_count<y:LabelModel>
+user_id<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -86,13 +84,13 @@ view_count<y:LabelModel>
     <node id="n3">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="90.0" width="110.0" x="-5.0" y="205.0"/>
+          <y:Geometry height="90.0" width="141.65651586513326" x="-20.82825793256663" y="230.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="83.716796875" x="13.1416015625" y="4.0">MovieViewing</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="46.3984375" modelName="custom" textColor="#000000" visible="true" width="99.89453125" x="2.0" y="30.1328125">user_id
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="83.716796875" x="28.96985949506663" y="4.0">MovieViewing</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="46.3984375" modelName="custom" textColor="#000000" visible="true" width="127.849609375" x="2.0" y="30.1328125">user_id
 movie_id
-last_accessed_at<y:LabelModel>
+movie_viewing_count<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -109,13 +107,13 @@ last_accessed_at<y:LabelModel>
       <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="90.0" width="117.24404123711349" x="491.3779793814433" y="130.0"/>
+          <y:Geometry height="90.0" width="150.52404123711347" x="499.7379793814432" y="155.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="89.529296875" x="13.857372181056746" y="4.0">ReviewViewing</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="46.3984375" modelName="custom" textColor="#000000" visible="true" width="99.89453125" x="2.0" y="30.1328125">user_id
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="89.529296875" x="30.49737218105679" y="4.0">ReviewViewing</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="46.3984375" modelName="custom" textColor="#000000" visible="true" width="130.1171875" x="2.0" y="30.1328125">user_id
 review_id
-last_accessed_at<y:LabelModel>
+review_viewing_count<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -132,7 +130,7 @@ last_accessed_at<y:LabelModel>
       <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="90.0" width="141.65651586513326" x="279.17174206743334" y="205.0"/>
+          <y:Geometry height="90.0" width="141.65651586513326" x="279.17174206743334" y="230.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="61.638671875" x="40.00892199506666" y="4.0">MovieLike</y:NodeLabel>
@@ -154,7 +152,7 @@ movie_id<y:LabelModel>
       <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="90.0" width="80.0" x="760.0" y="-20.0"/>
+          <y:Geometry height="90.0" width="80.0" x="810.0" y="-20.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="67.451171875" x="6.2744140625" y="4.0">ReviewLike</y:NodeLabel>
@@ -187,8 +185,8 @@ review_id<y:LabelModel>
     <edge id="e1" source="n2" target="n0">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="-45.0" tx="66.0" ty="25.0">
-            <y:Point x="700.0" y="50.0"/>
+          <y:Path sx="0.0" sy="-59.079999999999984" tx="66.0" ty="25.0">
+            <y:Point x="750.0" y="50.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_mandatory" target="none"/>
@@ -199,9 +197,9 @@ review_id<y:LabelModel>
     <edge id="e2" source="n1" target="n2">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="73.39999999999998" tx="0.0" ty="45.0">
-            <y:Point x="200.0" y="350.0"/>
-            <y:Point x="700.0" y="350.0"/>
+          <y:Path sx="0.0" sy="73.39999999999998" tx="0.0" ty="59.079999999999984">
+            <y:Point x="200.0" y="375.0"/>
+            <y:Point x="750.0" y="375.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_mandatory" target="none"/>
@@ -224,7 +222,7 @@ review_id<y:LabelModel>
     <edge id="e4" source="n3" target="n1">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="55.0" sy="-0.0" tx="-49.599999999999994" ty="-0.0"/>
+          <y:Path sx="70.82825793256663" sy="-0.0" tx="-49.599999999999994" ty="-0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_mandatory" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -235,8 +233,8 @@ review_id<y:LabelModel>
       <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-58.62202061855669" sy="-0.0" tx="25.0" ty="45.0">
-            <y:Point x="375.0" y="175.0"/>
+          <y:Path sx="-75.26202061855679" sy="-0.0" tx="25.0" ty="45.0">
+            <y:Point x="375.0" y="200.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_mandatory" target="none"/>
@@ -248,7 +246,7 @@ review_id<y:LabelModel>
       <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="58.6220206185568" sy="-0.0" tx="-40.0" ty="-0.0"/>
+          <y:Path sx="75.26202061855668" sy="-0.0" tx="-40.0" ty="-0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_mandatory" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -293,7 +291,7 @@ review_id<y:LabelModel>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="45.0" tx="40.0" ty="-0.0">
-            <y:Point x="800.0" y="175.0"/>
+            <y:Point x="850.0" y="200.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many_mandatory" target="none"/>
