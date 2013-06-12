@@ -15,6 +15,8 @@
 
 <%= yield %>
 
+<%= render 'shared/recently_added_movies' %>
+
 <div class='debug'>
   <%= debug(params) if Rails.env.development? %>
 </div>
