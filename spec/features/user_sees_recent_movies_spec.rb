@@ -15,6 +15,4 @@ feature 'User adds a movie', %{
     click_button 'Enter'
     page.should have_content('Recently added movies The Hangover')
   end
-
-  scenario 'User can click on a recently added movie and go to its show page'
 end
