@@ -1,7 +1,12 @@
 require 'spec_helper'
 
-describe 'add movies' do
-  it 'valid submission must have a title, year and contributor id' do
+feature 'User adds a movie', %{
+  As a User
+  I want to add a movie for review
+  so I can review it later
+  } do
+
+  scenario 'User can submit only if title and year are valid' do
     visit root_path
     click_link 'Add a new movie'
     fill_in 'Title', :with => 'The Hangover Part III'
@@ -11,7 +16,7 @@ describe 'add movies' do
     page.should have_content('successfully created')
   end
 
-  it 'does not submit if required fields are missing' do
+  scenario 'User cannot submit if required fields are missing' do
     visit root_path
     click_link 'Add a new movie'
     fill_in 'Title', :with => ''
@@ -21,7 +26,7 @@ describe 'add movies' do
     page.should have_content("can't be blank")
   end
 
-  it 'creating a new movie directs user to movie show page' do
+  scenario 'User creates a new movie gets directed to its movie show page' do
     visit root_path
     click_link 'Add a new movie'
     fill_in 'Title', :with => 'The Hangover Part III'
@@ -32,7 +37,7 @@ describe 'add movies' do
     page.should have_content '2013'
   end
 
-  it 'creating a new movie adds to movies index' do
+  scenario 'When user creates a new movie, it gets added to movies index' do
     visit root_path
     click_link 'Add a new movie'
     fill_in 'Title', :with => 'The Hangover Part III'
@@ -43,4 +48,7 @@ describe 'add movies' do
     page.should have_content 'The Hangover Part III'
     page.should have_content '2013'
   end
+
+  scenario 'User browses movies alphabetically'
+  # should we user the orderly gem?
 end
