@@ -48,4 +48,7 @@ feature 'User adds a movie', %{
     page.should have_content 'The Hangover Part III'
     page.should have_content '2013'
   end
+
+  scenario 'User browses movies alphabetically'
+  # should we user the orderly gem?
 end
