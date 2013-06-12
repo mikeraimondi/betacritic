@@ -21,6 +21,24 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'compass-rails'
+gem 'simple_form'
+gem 'pry-rails'
+
+group :development do
+  gem 'better_errors'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
