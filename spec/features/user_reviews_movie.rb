@@ -16,13 +16,21 @@ feature 'User reviews a movie', %{
   #   page.should have_content('successfully created')
   # end
 
-scenario "User sees a list of movies to review" do
-  visit root_path
-  
-end
+  scenario "User sees a list of movies to review" do
+    movie = FactoryGirl.create(:movie)
+    visit root_path
+    expect(page).to have_link(movie.title)
+  end
 
-scenario "User clicks 'add a review' to select a movie to review"
-scenario "User sees a form to input a review"
-scenario "User must input text for review"
-scenario "User must input rating of movie"
-scenario "User saves the review"
+  scenario "User clicks 'add a review' to select a movie to review" do
+    movie = FactoryGirl.create(:movie)
+    visit root_path
+    click_link 'Add a review'
+    expect(page).to have_content("Review #{movie.title}")
+  end
+
+  scenario "User sees a form to input a review"
+  scenario "User must input text for review"
+  scenario "User must input rating of movie"
+  scenario "User saves the review"
+end
