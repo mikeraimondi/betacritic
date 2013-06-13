@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :movie do
-    title 'Black Swan'
-    year '2010'
+    title 'Mary Poppins'
+    year '1990'
+    contributor_id 2
   end
 end
