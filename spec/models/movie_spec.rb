@@ -6,7 +6,7 @@ describe Movie do
 
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:year) }
-  # it { should validate_presence_of(:contributor) }
+  it { should validate_presence_of(:contributor) }
 
   it 'will not submit if year is not a number' do
     movie.year = 'Meow'

@@ -26,12 +26,12 @@ gem 'simple_form'
 
 group :development do
   gem 'better_errors'
-  gem 'pry-rails'
 end
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'launchy'
+  gem 'pry-rails'
 end
 
 group :test do
