@@ -1,3 +1,7 @@
 class Review < ActiveRecord::Base
-  # attr_accessible :movie, :title, :year, :contributor_id
+
+  validates_presence_of :movie, :user, :rating, :body
+  belongs_to :movie
+  belongs_to :user
+
 end

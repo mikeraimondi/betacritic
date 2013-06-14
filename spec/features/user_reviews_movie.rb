@@ -22,7 +22,7 @@ feature 'User reviews a movie', %{
     expect(page).to have_link(movie.title)
   end
 
-  pending "User clicks 'add a review' to select a movie to review" do
+  scenario "User clicks 'add a review' to select a movie to review" do
     movie = FactoryGirl.create(:movie)
     visit movie_path(movie)
     click_link 'Add a review'
