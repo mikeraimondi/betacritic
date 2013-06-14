@@ -8,11 +8,11 @@ class MoviesController < ApplicationController
   end
 
   def new
-    @movie = Movie.new
+    @movie = current_user.movies.new
   end
 
   def create
-    @movie = Movie.new(params[:movie])
+    @movie = current_user.movies.new(params[:movie])
     if @movie.save
       redirect_to @movie, :notice => 'Movie was successfully created'
     else
