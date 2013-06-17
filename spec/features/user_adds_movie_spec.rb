@@ -18,6 +18,17 @@ feature 'User adds a movie', %{
     Warden.test_reset!
   end
 
+  scenario 'Guest cannot submit movie' do
+    visit root_path
+    click_link 'Sign Out'
+    page.should_not have_content('Add a new movie')
+  end
+
+  scenario 'Signed in user can submit movie' do
+    visit root_path
+    page.should have_content('Add a new movie')
+  end
+
   scenario 'User can submit only if title and year are valid' do
     visit root_path
     click_link 'Add a new movie'
