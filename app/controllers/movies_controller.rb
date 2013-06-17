@@ -5,6 +5,9 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    if user_signed_in?
+      likes = current_user.likes.where('user_id = ?', current_user.id)
+    else
   end
 
   def new

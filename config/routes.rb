@@ -2,7 +2,10 @@ Betacritic::Application.routes.draw do
 
   devise_for :users
 
-  resources :movies
+  resources :movies do
+    resources :likes, only: [:index, :create, :destroy]
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

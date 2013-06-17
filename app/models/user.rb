@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
   has_many :movies,
     :foreign_key => :contributor_id,
     :inverse_of => :contributor
+
+  has_many :likes, dependent: :destroy
 end

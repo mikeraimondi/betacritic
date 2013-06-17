@@ -5,10 +5,12 @@
 <%- @movies.each do |movie| %>
   <br />
   <br />
+  <%- @movie = movie %>
   <%= link_to(movie) do %>
     <%= movie.title %>
     <%= "(#{movie.year})" %>
   <% end %>
+  <%= render 'shared/likes' %>
 <% end %>
 
 <%= render 'shared/recently_added_movies' %>

@@ -8,6 +8,10 @@ describe Movie do
   it { should validate_presence_of(:year) }
   it { should validate_presence_of(:contributor) }
 
+  it { should belong_to(:contributor) }
+
+  it { should have_many(:likes).dependent(:destroy) }
+
   it 'will not submit if year is not a number' do
     movie.year = 'Meow'
     expect(movie).to_not be_valid
