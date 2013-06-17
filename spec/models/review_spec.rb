@@ -9,4 +9,8 @@ describe Review do
   it { should validate_presence_of(:rating) }
   it { should validate_presence_of(:body) }
 
+  it 'will not submit if there is no text in form' do
+    review = ''
+    expect(review).to_not be_valid
+  end
 end

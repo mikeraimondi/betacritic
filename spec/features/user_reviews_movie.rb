@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'User reviews a movie', %{
   As a User
   I want to add a review of a movie
-  so I can share my opinion of a movie
+  so I can contribute my opinions of the movie to its page
   } do
 
   # scenario 'User can submit only if title and year are valid' do
@@ -22,15 +22,27 @@ feature 'User reviews a movie', %{
     expect(page).to have_link(movie.title)
   end
 
-  scenario "User clicks 'add a review' to select a movie to review" do
+  scenario "User clicks 'add a review' to review a movie" do
     movie = FactoryGirl.create(:movie)
     visit movie_path(movie)
     click_link 'Add a review'
     expect(page).to have_content("Review #{movie.title}")
   end
 
-  scenario "User sees a form to input a review"
-  scenario "User must input text for review"
+  scenario "User sees a form to input a review" do
+    movie = FactoryGirl.create(:movie)
+    visit movie_path(movie)
+    # expect(page).to have_content
+  end
+
+  scenario "User must input text for review" do
+    movie = FactoryGirl.create(:movie)
+    visit movie_path(movie)
+    fill_in
+    expect(page).to have_content("Please write a review")
+  end
+
   scenario "User must input rating of movie"
   scenario "User saves the review"
+
 end
