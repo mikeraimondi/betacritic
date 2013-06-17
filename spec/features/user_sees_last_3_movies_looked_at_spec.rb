@@ -32,11 +32,18 @@ feature 'User sees last 3 movies looked at', %{
     first('.movies').click_link(movie1.title)
     expect(user.viewings.last.viewable).to eql(movie1)
     visit root_path
-    within (".recently-viewed") do
-      expect(page).to have_content(movie2.title)
+    within first(".recently-viewed") do
+      expect(page).to have_content(movie1.title)
+      expect(page).to_not have_content(movie2.title)
     end
   end
 
-  scenario "User can click on a movie and will be taken to that movies show page"
+  scenario "User can click on a movie and will be taken to that movie's show page" do
+    visit root_path
+    first('.movies').click_link(movie2.title)
+    visit root_path
+    first(".recently-viewed").click_link(movie2.title)
+    expect(page).to have_css("h1", text: movie2.title)
+  end
 
 end

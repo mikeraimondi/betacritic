@@ -10,17 +10,5 @@
     <% end %>
   <% end %>
 </div>
-<%- if user_signed_in? -%>
-  <ul class="recently-viewed">
-    <%- Viewing.recent_movies(current_user).each do |viewing| -%>
-    <%- movie = viewing.viewable -%>
-      <li>
-        <%= link_to(movie) do %>
-          <%= movie.title %>
-          <%= "(#{movie.year})" %>
-        <% end %>
-      </li>
-    <%- end -%>
-  </ul>
-<%- end -%>
 
+<%= render 'shared/recently_viewed_movies' %>
