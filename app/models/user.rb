@@ -9,7 +9,10 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
-  has_many :movies,
-    :foreign_key => :contributor_id,
-    :inverse_of => :contributor
+  has_many  :movies,
+            foreign_key: :contributor_id,
+            inverse_of: :contributor
+
+  has_many  :viewings,
+            inverse_of: :user
 end
