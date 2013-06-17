@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'factory_girl_rails'
 
 feature 'User sees a movie', %{
   As a User
