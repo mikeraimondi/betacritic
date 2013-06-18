@@ -1,10 +1,16 @@
-<%= link_to 'Add a new movie', new_movie_path %>
+<%- if user_signed_in? %>
+  <%= link_to 'Add a new movie', new_movie_path %>
+<%- end %>
 
-<%- @movies.each do |movie| %>
-  <br />
-  <br />
-  <%= link_to(movie) do %>
-    <%= movie.title %>
-    <%= "(#{movie.year})" %>
+<div class="movies">
+  <%- @movies.each do |movie| %>
+    <br />
+    <br />
+    <%= link_to(movie) do %>
+      <%= movie.title %>
+      <%= "(#{movie.year})" %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+
+<%= render 'shared/recently_viewed_movies' %>

@@ -5,10 +5,10 @@ class Movie < ActiveRecord::Base
 
   validates :year, :numericality => { :greater_than_or_equal_to => 1850, :less_than_or_equal_to => 2500 }
 
-  belongs_to :contributor, :class_name => 'User',
-    :foreign_key => 'contributor_id',
-    :inverse_of => :movies
+  belongs_to  :contributor, class_name: 'User',
+              foreign_key: 'contributor_id',
+              inverse_of: :movies
 
-  has_many :reviews
-
+  has_many  :viewings,
+            as: :viewable
 end

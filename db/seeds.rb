@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'factory_girl_rails'
+
+user = FactoryGirl.create(:user)
+movie1 = FactoryGirl.create(:movie, contributor: user)
+movie2 = FactoryGirl.create(:movie, contributor: user)
+movie3 = FactoryGirl.create(:movie, contributor: user)
+movie4 = FactoryGirl.create(:movie, contributor: user)
