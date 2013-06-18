@@ -16,6 +16,11 @@ class User < ActiveRecord::Base
   has_many  :viewings,
             inverse_of: :user
 
+  ROLES = %w[user admin]
+
+  validates_inclusion_of :role, in: ROLES
+  validates_presence_of :role
+
   def visit_movie(movie)
     viewing = viewings.where(viewable_id: movie.id, viewable_type: "Movie").first
     if viewing.nil?
