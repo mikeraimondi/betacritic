@@ -3,7 +3,7 @@ Betacritic::Application.routes.draw do
   devise_for :users
 
   resources :movies do
-    resources :reviews, only: [:new, :create]
+    resources :reviews
   end
 
   # resources :reviews, except: [:new, :create] do

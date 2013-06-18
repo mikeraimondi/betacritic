@@ -7,10 +7,10 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
-  def new
-    @review = Review.new
-    @movie = Movie.find(params[:movie_id])
-  end
+  # def new
+  #   @review = Review.new
+  #   @movie = Movie.find(params[:movie_id])
+  # end
 
   def create
     @review = current_user.reviews.new(params[:review])
