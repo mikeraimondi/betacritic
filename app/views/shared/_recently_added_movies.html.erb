@@ -1,9 +1,13 @@
-<h2>Recently added movies</h2>
-
-<%- Movie.last(3).reverse.each do |movie| %>
-  <%= link_to(movie) do %>
-    <%= movie.title %>
-    <%= "(#{movie.year})" %>
-  <% end %>
-  <br />
-<% end %>
+<div class='recently_added_movies'>
+  <h2>Recently added movies</h2>
+  <ul>
+    <%- Movie.last(3).reverse.each do |movie| %>
+      <li>
+        <%= link_to(movie) do %>
+          <%= movie.title %>
+          <%= "(#{movie.year})" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
