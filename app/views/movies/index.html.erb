@@ -10,26 +10,21 @@
       <%= movie.title %>
       <%= "(#{movie.year})" %>
     <% end %>
-  <% end %>
-<<<<<<< HEAD
 
-  <%- if user_signed_in? %>
-    <%= simple_form_for([movie, movie.likes.new]) do |f| %>
-      <%- if current_user.likes_movie?(movie) %>
-        <%= link_to 'Unlike movie', movie_like_path(movie, current_user.like_for(movie).id), method: :delete %>
-      <%- else %>
-        <%= f.submit 'Like movie' %>
+    <%- if user_signed_in? %>
+      <%= simple_form_for([movie, movie.likes.new]) do |f| %>
+        <%- if current_user.likes_movie?(movie) %>
+          <%= link_to 'Unlike movie', movie_like_path(movie, current_user.like_for(movie).id), method: :delete %>
+        <%- else %>
+          <%= f.submit 'Like movie' %>
+        <% end %>
       <% end %>
     <% end %>
+
+    <%= "#{pluralize(movie.likes.count, 'like')}" %>
+
   <% end %>
-
-  <%= "#{pluralize(movie.likes.count, 'like')}" %>
-
-<% end %>
-
-<%= render 'shared/recently_added_movies' %>
-=======
 </div>
 
+<%= render 'shared/recently_added_movies' %>
 <%= render 'shared/recently_viewed_movies' %>
->>>>>>> 918db1efc2f692869bd33338870157cfae0c03d9

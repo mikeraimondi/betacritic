@@ -5,9 +5,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-<<<<<<< HEAD
     @like = @movie.likes.new
-=======
     current_user.visit_movie(@movie) if user_signed_in?
       # viewings = @movie.viewings.where("user_id = ?", current_user.id)
       # if viewings.count == 1
@@ -16,7 +14,6 @@ class MoviesController < ApplicationController
       #   current_user.viewings.create(viewable: @movie)
       # end
     # end
->>>>>>> 918db1efc2f692869bd33338870157cfae0c03d9
   end
 
   def new
