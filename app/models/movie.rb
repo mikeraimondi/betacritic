@@ -8,4 +8,7 @@ class Movie < ActiveRecord::Base
   belongs_to :contributor, :class_name => 'User',
     :foreign_key => 'contributor_id',
     :inverse_of => :movies
+
+  has_many :reviews
+
 end

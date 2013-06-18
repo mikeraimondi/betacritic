@@ -2,7 +2,16 @@ Betacritic::Application.routes.draw do
 
   devise_for :users
 
-  resources :movies
+  resources :movies do
+    resources :reviews
+  end
+
+  # resources :reviews, except: [:new, :create] do
+  #   resources :comments
+  # end
+
+  # /movies/1/reviews/new
+  # /reviews/32
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
