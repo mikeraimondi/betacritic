@@ -29,4 +29,8 @@ class User < ActiveRecord::Base
       viewing.touch
     end
   end
+
+  def admin?
+
+  end
 end
