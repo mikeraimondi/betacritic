@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
             inverse_of: :contributor
 
   has_many  :viewings,
-            inverse_of: :user
+            inverse_of: :user,
+            dependent: :destroy
 
   def visit_movie(movie)
     viewing = viewings.where(viewable_id: movie.id, viewable_type: "Movie").first
