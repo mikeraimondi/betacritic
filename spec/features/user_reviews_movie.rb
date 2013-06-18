@@ -12,12 +12,12 @@ feature 'User reviews a movie', %{
     expect(page).to have_link(movie.title)
   end
 
-  # scenario "User clicks 'add a review' to review a movie" do
-  #   movie = FactoryGirl.create(:movie)
-  #   visit movie_path(movie)
-  #   click_link 'Add a review'
-  #   expect(page).to have_content("Review #{movie.title}")
-  # end
+  scenario "User clicks 'add a review' to review a movie" do
+    movie = FactoryGirl.create(:movie)
+    visit movie_path(movie)
+    click_link 'Add a review'
+    expect(page).to have_content("Review #{movie.title}")
+  end
 
   scenario "User sees a form to input a review" do
     movie = FactoryGirl.create(:movie)

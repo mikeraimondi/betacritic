@@ -3,9 +3,9 @@ class Review < ActiveRecord::Base
 
   validates_presence_of :movie, :user, :rating, :body
   
-  belongs_to :movie
-  belongs_to :user
-
-  has_many :rating
+  belongs_to  :movie,
+              inverse_of: :reviews
+  belongs_to  :user,
+              inverse_of: :reviews
 
 end
