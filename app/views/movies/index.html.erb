@@ -2,13 +2,16 @@
   <%= link_to 'Add a new movie', new_movie_path %>
 <%- end %>
 
-<%- @movies.each do |movie| %>
-  <br />
-  <br />
-  <%= link_to(movie) do %>
-    <%= movie.title %>
-    <%= "(#{movie.year})" %>
+<div class="movies">
+  <%- @movies.each do |movie| %>
+    <br />
+    <br />
+    <%= link_to(movie) do %>
+      <%= movie.title %>
+      <%= "(#{movie.year})" %>
+    <% end %>
   <% end %>
+<<<<<<< HEAD
 
   <%- if user_signed_in? %>
     <%= simple_form_for([movie, movie.likes.new]) do |f| %>
@@ -25,3 +28,8 @@
 <% end %>
 
 <%= render 'shared/recently_added_movies' %>
+=======
+</div>
+
+<%= render 'shared/recently_viewed_movies' %>
+>>>>>>> 918db1efc2f692869bd33338870157cfae0c03d9
