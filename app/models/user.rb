@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
   has_many  :viewings,
             inverse_of: :user
 
+  has_many  :reviews,
+            inverse_of: :user
+
   def visit_movie(movie)
     viewing = viewings.where(viewable_id: movie.id, viewable_type: "Movie").first
     if viewing.nil?

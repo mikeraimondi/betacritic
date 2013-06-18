@@ -11,4 +11,6 @@ class Movie < ActiveRecord::Base
 
   has_many  :viewings,
             as: :viewable
+  has_many  :reviews,
+            inverse_of: :movie
 end
