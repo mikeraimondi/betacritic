@@ -1,5 +1,5 @@
 class Movie < ActiveRecord::Base
-  attr_accessible :title, :year, :contributor_id
+  attr_accessible :title, :year, :contributor_id, :likes
 
   validates_presence_of :title, :year, :contributor
 

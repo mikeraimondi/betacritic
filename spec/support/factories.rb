@@ -10,4 +10,9 @@ FactoryGirl.define do
     password              "password"
     password_confirmation "password"
   end
+
+  factory :like do
+    association :user, factory: :user
+    association :likable, factory: :movie
+  end
 end

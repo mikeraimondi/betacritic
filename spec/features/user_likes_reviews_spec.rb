@@ -1,10 +1,10 @@
 require 'spec_helper'
 include Warden::Test::Helpers
 
-feature 'User likes a movie', %{
-  As a logged-in user
-  I should be able to mark a movie as one I like
-  So I can see a list of all the movies that I like
+feature 'User likes a review', %{
+  An a logged-in user,
+  I should be able to mark a review as one I like,
+  So reviewers get credit for good reviews
   } do
 
   given(:user)  { FactoryGirl.create(:user) }

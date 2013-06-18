@@ -13,5 +13,13 @@ class User < ActiveRecord::Base
     :foreign_key => :contributor_id,
     :inverse_of => :contributor
 
-  has_many :likes, dependent: :destroy
+  has_many :likes, inverse_of: :user, dependent: :destroy
+
+  def like_for(movie)
+    likes.where("likable_id = ? AND likable_type = 'Movie'", movie.id).first
+  end
+
+  def likes_movie?(movie)
+    like_for(movie).present?
+  end
 end
