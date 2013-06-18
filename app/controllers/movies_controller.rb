@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.find(:all, :order => 'title')
+    @movies = Movie.find(:all, order: 'title')
   end
 
   def show
@@ -15,9 +15,9 @@ class MoviesController < ApplicationController
   def create
     @movie = current_user.movies.new(params[:movie])
     if @movie.save
-      redirect_to @movie, :notice => 'Movie was successfully created'
+      redirect_to @movie, notice: 'Movie was successfully created'
     else
-      render :action => 'new'
+      render action: 'new'
     end
   end
 end
