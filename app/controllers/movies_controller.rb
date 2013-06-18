@@ -5,6 +5,14 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    current_user.visit_movie(@movie) if user_signed_in?
+      # viewings = @movie.viewings.where("user_id = ?", current_user.id)
+      # if viewings.count == 1
+      #   viewings.first.touch
+      # else
+      #   current_user.viewings.create(viewable: @movie)
+      # end
+    # end
   end
 
   def new
