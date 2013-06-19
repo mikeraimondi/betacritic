@@ -34,7 +34,6 @@ end
   scenario "User must input text for review" do
     movie = FactoryGirl.create(:movie)
     visit movie_path(movie)
-    fill_in 'review_body', with: ''
     click_button 'Create Review'
     expect(page).to have_content("can't be blank")
   end
@@ -42,6 +41,7 @@ end
   scenario "User must input rating of movie" do
     movie = FactoryGirl.create(:movie)
     visit movie_path(movie)
+    click_button 'Create Review'
     expect(page).to have_content("can't be blank")
   end
   
