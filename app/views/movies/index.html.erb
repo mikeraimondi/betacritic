@@ -11,7 +11,7 @@
       <%= "(#{movie.year})" %>
     <% end %>
 
-    <%= render 'likes/button', movie: movie, like: movie.likes.new %>
+    <%= render 'likes/button', movie: movie, user: current_user, like: movie.likes.new %>
 
     <%= "#{pluralize(movie.likes.count, 'like')}" %>
 

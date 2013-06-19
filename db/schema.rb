@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130617194502) do
-=======
 ActiveRecord::Schema.define(:version => 20130618204719) do
->>>>>>> 485099e739b7f4481737d616d59713304b9e2142
 
   create_table "likes", :force => true do |t|
     t.integer  "likable_id",   :null => false

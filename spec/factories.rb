@@ -20,7 +20,7 @@ FactoryGirl.define do
   end
 
   factory :like do
-    association :user, factory: :user
+    user
     association :likable, factory: :movie
   end
 end

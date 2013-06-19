@@ -1,11 +1,12 @@
 Betacritic::Application.routes.draw do
 
   devise_for :users
-
-  resources :movies do
-    resources :likes, only: [:index, :create, :destroy]
+  resources :users do
+    resources :likes, only: [:index]
   end
 
+  resources :movies
+  resources :likes, only: [:create, :destroy]
 
   ['admin'].each do |page|
     get "/#{page}" => "pages##{page}", :as => page

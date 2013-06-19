@@ -10,6 +10,8 @@ describe User do
   it { should allow_value('admin').for(:role) }
   it { should_not allow_value('panda').for(:role) }
 
+  it { should have_many(:likes).dependent(:destroy) }
+
   describe 'like_for method' do
     let(:movie) {FactoryGirl.create(:movie)}
     let(:user) {FactoryGirl.create(:user)}
