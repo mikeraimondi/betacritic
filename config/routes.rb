@@ -4,6 +4,10 @@ Betacritic::Application.routes.draw do
 
   resources :movies
 
+  ['admin'].each do |page|
+    get "/#{page}" => "pages##{page}", :as => page
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
