@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
             inverse_of: :contributor
 
   has_many  :viewings,
-            inverse_of: :user
+            inverse_of: :user,
+            dependent: :destroy
 
   ROLES = %w[user admin]
 
