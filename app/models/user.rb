@@ -14,7 +14,13 @@ class User < ActiveRecord::Base
             inverse_of: :contributor
 
   has_many  :viewings,
-            inverse_of: :user
+            inverse_of: :user,
+            dependent: :destroy
+
+  ROLES = %w[user admin]
+
+  validates_inclusion_of :role, in: ROLES
+  validates_presence_of :role
 
   has_many  :reviews,
             inverse_of: :user
@@ -26,5 +32,9 @@ class User < ActiveRecord::Base
     else
       viewing.touch
     end
+  end
+
+  def admin?
+    role == 'admin'
   end
 end

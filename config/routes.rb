@@ -13,6 +13,10 @@ Betacritic::Application.routes.draw do
   # /movies/1/reviews/new
   # /reviews/32
 
+  ['admin'].each do |page|
+    get "/#{page}" => "pages##{page}", :as => page
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

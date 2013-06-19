@@ -4,7 +4,7 @@ describe Movie do
 
   let(:movie) {FactoryGirl.build(:movie)}
 
-  it { should have_many(:viewings) }
+  it { should have_many(:viewings).dependent(:destroy) }
   it { should have_many(:reviews) }
 
   it { should validate_presence_of(:title) }

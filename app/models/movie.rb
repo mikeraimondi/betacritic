@@ -10,7 +10,8 @@ class Movie < ActiveRecord::Base
               inverse_of: :movies
 
   has_many  :viewings,
-            as: :viewable
+            as: :viewable,
+            dependent: :destroy
   has_many  :reviews,
             inverse_of: :movie
 end
