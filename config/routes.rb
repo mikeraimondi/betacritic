@@ -3,8 +3,9 @@ Betacritic::Application.routes.draw do
   devise_for :users
 
   resources :movies
+  resources :users, only: [:index, :show]
 
-  ['admin'].each do |page|
+  %w[admin].each do |page|
     get "/#{page}" => "pages##{page}", :as => page
   end
 
