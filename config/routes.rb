@@ -3,6 +3,11 @@ Betacritic::Application.routes.draw do
   devise_for :users
 
   resources :movies
+  resources :users, only: [:index, :show]
+
+  %w[admin].each do |page|
+    get "/#{page}" => "pages##{page}", :as => page
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
