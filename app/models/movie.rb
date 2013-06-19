@@ -14,5 +14,6 @@ class Movie < ActiveRecord::Base
            dependent: :destroy
 
   has_many  :viewings,
-            as: :viewable
+            as: :viewable,
+            dependent: :destroy
 end

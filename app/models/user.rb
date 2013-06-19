@@ -18,7 +18,13 @@ class User < ActiveRecord::Base
            dependent: :destroy
 
   has_many  :viewings,
-            inverse_of: :user
+            inverse_of: :user,
+            dependent: :destroy
+
+  ROLES = %w[user admin]
+
+  validates_inclusion_of :role, in: ROLES
+  validates_presence_of :role
 
   def like_for(movie)
     likes.where("likable_id = ? AND likable_type = 'Movie'", movie.id).first
@@ -35,5 +41,9 @@ class User < ActiveRecord::Base
     else
       viewing.touch
     end
+  end
+
+  def admin?
+    role == 'admin'
   end
 end

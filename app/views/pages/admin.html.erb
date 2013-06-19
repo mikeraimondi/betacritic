@@ -1,0 +1,7 @@
+<h2>Admin dashboard</h2>
+
+<h3>List of users</h3>
+<%- @users.each do |user| %>
+  <%= user.email %>
+  <br />
+<% end %>

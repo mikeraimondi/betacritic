@@ -2,8 +2,13 @@ require 'spec_helper'
 
 describe User do
   it { should have_many(:movies) }
-  it { should have_many(:viewings) }
+  it { should have_many(:viewings).dependent(:destroy) }
   # it { should have_many(:reviews) }
+
+  it { should validate_presence_of(:role) }
+  it { should allow_value('user').for(:role) }
+  it { should allow_value('admin').for(:role) }
+  it { should_not allow_value('panda').for(:role) }
 
   describe 'like_for method' do
     let(:movie) {FactoryGirl.create(:movie)}
@@ -30,6 +35,19 @@ describe User do
     it 'should return true if user likes movie' do
       like = FactoryGirl.create(:like, user: user, likable: movie)
       user.likes_movie?(movie).should be_true
+    end
+  end
+
+  context 'when Admin' do
+    let(:user) {FactoryGirl.create(:user)}
+    let(:admin) {FactoryGirl.create(:admin)}
+
+    it "returns false" do
+      user.admin?.should be_false
+    end
+
+    it "returns true" do
+      admin.admin?.should be_true
     end
   end
 end
