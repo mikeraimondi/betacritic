@@ -1,5 +1,0 @@
-<%- if user_signed_in? %>
-  <%= simple_form_for([@movie, @like]) do |f| %>
-    <%= f.submit 'Like movie' %>
-  <% end %>
-<% end %>

@@ -6,7 +6,7 @@ class Like < ActiveRecord::Base
 
   validates_presence_of :user, :likable
 
-  def self.likes(user)
-    user.likes.where('likable_type = ?', 'Movie')
-  end
+  # def self.likes(user)
+  #   user.likes.where('likable_type = ?', 'Movie')
+  # end
 end

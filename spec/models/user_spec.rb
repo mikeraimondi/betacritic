@@ -20,7 +20,7 @@ describe User do
 
     it 'should return an object if user has liked movie' do
       like = FactoryGirl.create(:like, user: user, likable: movie)
-      user.like_for(movie).should_not be_nil
+      user.like_for(movie).should == like
     end
   end
 

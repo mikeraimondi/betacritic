@@ -11,15 +11,7 @@
       <%= "(#{movie.year})" %>
     <% end %>
 
-    <%- if user_signed_in? %>
-      <%= simple_form_for([movie, movie.likes.new]) do |f| %>
-        <%- if current_user.likes_movie?(movie) %>
-          <%= link_to 'Unlike movie', movie_like_path(movie, current_user.like_for(movie).id), method: :delete %>
-        <%- else %>
-          <%= f.submit 'Like movie' %>
-        <% end %>
-      <% end %>
-    <% end %>
+    <%= render 'likes/button', movie: movie, like: movie.likes.new %>
 
     <%= "#{pluralize(movie.likes.count, 'like')}" %>
 
