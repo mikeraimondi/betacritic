@@ -31,10 +31,6 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    if role == 'admin'
-      true
-    else
-      false
-    end
+    role == 'admin'
   end
 end
