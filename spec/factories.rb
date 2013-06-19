@@ -18,4 +18,9 @@ FactoryGirl.define do
       role                "admin"
     end
   end
+
+  factory :like do
+    user
+    association :likable, factory: :movie
+  end
 end
