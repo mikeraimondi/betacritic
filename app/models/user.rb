@@ -17,6 +17,11 @@ class User < ActiveRecord::Base
             inverse_of: :user,
             dependent: :destroy
 
+  ROLES = %w[user admin]
+
+  validates_inclusion_of :role, in: ROLES
+  validates_presence_of :role
+
   def visit_movie(movie)
     viewing = viewings.where(viewable_id: movie.id, viewable_type: "Movie").first
     if viewing.nil?
@@ -24,5 +29,9 @@ class User < ActiveRecord::Base
     else
       viewing.touch
     end
+  end
+
+  def admin?
+    role == 'admin'
   end
 end
