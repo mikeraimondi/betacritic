@@ -39,11 +39,22 @@ end
     expect(page).to have_content("can't be blank")
   end
 
-  # scenario "User must input rating of movie" do
-  #   movie = FactoryGirl.create(:movie)
-  #   visit movie_path(movie)
-  # end
+  scenario "User must input rating of movie" do
+    movie = FactoryGirl.create(:movie)
+    visit movie_path(movie)
+    expect(page).to have_content("can't be blank")
+  end
   
-  scenario "User saves the review"
+  scenario "User saves the review" do
+    movie = FactoryGirl.create(:movie)
+    visit movie_path(movie)
+    fill_in 'Body', with: 'Review'
+    choose '6'
+    click_button 'Create Review'
+    expect(page).to have_content("Review was successfully created")
+    review = movie.reviews.first
+    expect(review.body).to eql('Review')
+    expect(review.rating).to eql(6)
+  end
 
 end

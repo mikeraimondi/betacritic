@@ -7,3 +7,12 @@
 </p>
 
   <%= render 'reviews/form' %>
+
+<p>
+  <% @movie.reviews.each do |review| %>
+    <p>
+    <%= review.body %>
+    <%= review.rating %>
+    </p>
+  <% end %>
+</p>

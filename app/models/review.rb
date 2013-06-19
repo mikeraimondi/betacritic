@@ -1,5 +1,5 @@
 class Review < ActiveRecord::Base
-  attr_accessible :movie, :body
+  attr_accessible :movie, :body, :rating
 
   validates_presence_of :movie, :user, :rating, :body
   
