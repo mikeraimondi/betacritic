@@ -6,12 +6,16 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :likes
   # attr_accessible :title, :body
 
-  has_many  :movies,
-            foreign_key: :contributor_id,
-            inverse_of: :contributor
+  has_many :movies,
+           foreign_key: :contributor_id,
+           inverse_of: :contributor
+
+  has_many :likes,
+           inverse_of: :user,
+           dependent: :destroy
 
   has_many  :viewings,
             inverse_of: :user,
@@ -37,4 +41,17 @@ class User < ActiveRecord::Base
   def admin?
     role == 'admin'
   end
+
+  def like_for(movie)
+    likes.where("likable_id = ? AND likable_type = 'Movie'", movie.id).first
+  end
+
+  def likes_movie?(movie)
+    like_for(movie).present?
+  end
+
+  # def liked_movies
+  #   likes.where('likable_type = ?', 'Movie')
+  # end
+
 end

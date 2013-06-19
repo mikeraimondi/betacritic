@@ -10,7 +10,13 @@
       <%= movie.title %>
       <%= "(#{movie.year})" %>
     <% end %>
+
+    <%= render 'likes/button', movie: movie, user: current_user, like: movie.likes.new %>
+
+    <%= "#{pluralize(movie.likes.count, 'like')}" %>
+
   <% end %>
 </div>
 
+<%= render 'shared/recently_added_movies' %>
 <%= render 'shared/recently_viewed_movies' %>

@@ -1,0 +1,11 @@
+<%- if user_signed_in? -%>
+  <%= simple_form_for(like) do |f| %>
+    <%- if current_user.likes_movie?(movie) -%>
+      <%= link_to 'Unlike movie', like_path(current_user.like_for(movie).id), method: :delete %>
+    <%- else -%>
+      <%= f.hidden_field :likable_id, value: movie.id %>
+      <%= f.hidden_field :likable_type, value: 'Movie' %>
+      <%= f.submit 'Like movie' %>
+    <%- end -%>
+  <%- end -%>
+<%- end -%>

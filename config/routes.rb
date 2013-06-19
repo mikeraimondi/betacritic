@@ -1,10 +1,15 @@
 Betacritic::Application.routes.draw do
 
   devise_for :users
+  resources :users do
+    resources :likes, only: [:index]
+  end
 
   resources :movies do
     resources :reviews
   end
+
+  resources :likes, only: [:create, :destroy]
 
   # resources :reviews, except: [:new, :create] do
   #   resources :comments
