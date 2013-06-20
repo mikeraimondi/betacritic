@@ -49,7 +49,7 @@ end
     movie = FactoryGirl.create(:movie)
     visit movie_path(movie)
     fill_in 'Body', with: 'Review'
-    choose '6'
+    select '6'
     click_button 'Create Review'
     expect(page).to have_content("Review was successfully created")
     review = movie.reviews.first

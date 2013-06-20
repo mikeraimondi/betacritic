@@ -17,5 +17,6 @@ class Movie < ActiveRecord::Base
             as: :viewable,
             dependent: :destroy
   has_many  :reviews,
-            inverse_of: :movie
+            inverse_of: :movie,
+            dependent: :destroy
 end

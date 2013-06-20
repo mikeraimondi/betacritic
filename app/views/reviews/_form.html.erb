@@ -7,7 +7,7 @@
   </div>
 
   <div class="form-inputs">
-  <%= f.collection_radio_buttons :rating, [[1,'1'],[2,'2'],[3,'3'],[4,'4'],[5,'5'],[6,'6'],[7,'7'],[8,'8'],[9,'9'],[10,'10']], :first, :last %>
+  <%= f.input :rating, collection: 1..10 %>
   </div>
 
   <div class="form-actions">

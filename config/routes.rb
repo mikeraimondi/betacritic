@@ -11,13 +11,6 @@ Betacritic::Application.routes.draw do
 
   resources :likes, only: [:create, :destroy]
 
-  # resources :reviews, except: [:new, :create] do
-  #   resources :comments
-  # end
-
-  # /movies/1/reviews/new
-  # /reviews/32
-
   ['admin'].each do |page|
     get "/#{page}" => "pages##{page}", :as => page
   end

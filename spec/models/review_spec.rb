@@ -9,4 +9,10 @@ describe Review do
   it { should validate_presence_of(:rating) }
   it { should validate_presence_of(:body) } 
 
+  it { should allow_value(1).for(:rating) }
+  it { should allow_value(10).for(:rating) }
+  it { should_not allow_value(0).for(:rating) }
+  it { should_not allow_value(11).for(:rating) }
+  it { should_not allow_value(-1).for(:rating) }
+
 end
