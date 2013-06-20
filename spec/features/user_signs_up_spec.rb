@@ -13,7 +13,9 @@ feature 'Visitor signs up', %{
     fill_in 'user[password]', :with => 'qwertyuiop'
     fill_in 'user[password_confirmation]', :with => 'qwertyuiop'
     click_button 'Sign up'
-    page.should have_content('You have signed up successfully')
+    confirmation_link = "/users/confirmation?confirmation_token=#{User.last.confirmation_token}"
+    visit confirmation_link
+    page.should have_content('You are now signed in')
     page.should_not have_content('Sign up')
   end
 end

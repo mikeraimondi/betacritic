@@ -13,6 +13,8 @@ feature 'User signs in', %{
     fill_in 'user[password]', :with => 'qwertyuiop'
     fill_in 'user[password_confirmation]', :with => 'qwertyuiop'
     click_button 'Sign up'
+    confirmation_link = "/users/confirmation?confirmation_token=#{User.last.confirmation_token}"
+    visit confirmation_link
     click_link 'Sign Out'
     visit root_path
     click_link 'Sign In'
