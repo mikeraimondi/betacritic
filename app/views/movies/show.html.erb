@@ -10,4 +10,15 @@
 
 <%= "#{pluralize(@movie.likes.count, 'like')}" %>
 
+<%= render 'reviews/form' %>
+
+<p>
+  <% @movie.reviews.each do |review| %>
+    <p>
+    <%= review.body %>
+    <%= review.rating %>
+    </p>
+  <% end %>
+</p>
+
 <%= render 'shared/recently_added_movies' %>

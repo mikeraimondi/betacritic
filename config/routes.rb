@@ -5,7 +5,10 @@ Betacritic::Application.routes.draw do
     resources :likes, only: [:index]
   end
 
-  resources :movies
+  resources :movies do
+    resources :reviews
+  end
+
   resources :likes, only: [:create, :destroy]
 
   ['admin'].each do |page|

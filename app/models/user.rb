@@ -26,6 +26,9 @@ class User < ActiveRecord::Base
   validates_inclusion_of :role, in: ROLES
   validates_presence_of :role
 
+  has_many  :reviews,
+            inverse_of: :user
+
   def visit_movie(movie)
     viewing = viewings.where(viewable_id: movie.id, viewable_type: "Movie").first
     if viewing.nil?
