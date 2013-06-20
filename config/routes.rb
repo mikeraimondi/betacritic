@@ -1,8 +1,14 @@
 Betacritic::Application.routes.draw do
 
   devise_for :users
+
   resources :users do
     resources :likes, only: [:index]
+  end
+
+  namespace :admin do
+    resources :users, only: [:index, :show]
+    resources :movies, only: [:index]
   end
 
   resources :movies do
@@ -11,9 +17,7 @@ Betacritic::Application.routes.draw do
 
   resources :likes, only: [:create, :destroy]
 
-  ['admin'].each do |page|
-    get "/#{page}" => "pages##{page}", :as => page
-  end
+  get "/admin" => "pages#admin", as: 'admin'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
