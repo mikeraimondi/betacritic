@@ -10,6 +10,7 @@
     <% end %>
 
     <%= "#{pluralize(movie.likes.count, 'like')}" %>
+    <%= "#{pluralize(movie.viewings.count, 'viewing')}" %>
 
   <% end %>
 </div>

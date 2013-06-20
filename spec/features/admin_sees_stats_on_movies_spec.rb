@@ -10,9 +10,9 @@ feature 'Admin sees stats on movies', %{
   given(:user) { FactoryGirl.create(:user) }
   given(:admin) { FactoryGirl.create(:admin) }
   given(:movie) { FactoryGirl.create(:movie) }
-  given(:viewing1) { FactoryGirl.create(:viewing) }
-  given(:viewing2) { FactoryGirl.create(:viewing) }
-  given(:viewing3) { FactoryGirl.create(:viewing) }
+  given(:viewing1) { FactoryGirl.create(:viewing, viewable: movie) }
+  given(:viewing2) { FactoryGirl.create(:viewing, viewable: movie) }
+  given(:viewing3) { FactoryGirl.create(:viewing, viewable: movie) }
   given(:like1) { FactoryGirl.create(:like, likable: movie) }
   given(:like2) { FactoryGirl.create(:like, likable: movie) }
 
@@ -59,6 +59,19 @@ feature 'Admin sees stats on movies', %{
     page.should have_content('2 likes')
   end
 
-  scenario 'Admin sees how many pageviews a movie has'
+  scenario 'Admin sees how many pageviews a movie has' do
+    movie
+    viewing1
+    viewing2
+    viewing3
+    visit root_path
+    click_link 'Sign In'
+    fill_in 'Email', with: admin.email
+    fill_in 'Password', with: admin.password
+    click_button 'Sign in'
+    click_link 'Admin dashboard'
+    click_link 'Movie stats'
+    page.should have_content('3 viewings')
+  end
 
 end
