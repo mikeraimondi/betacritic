@@ -11,7 +11,7 @@ feature 'Admin browses list of users', %{
   given(:admin) { FactoryGirl.create(:admin) }
 
   scenario 'Guest cannot see list of users by url' do
-    visit users_path
+    visit admin_users_path
     page.should have_content('You are not authorized!')
   end
 
@@ -21,7 +21,7 @@ feature 'Admin browses list of users', %{
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Sign in'
-    visit users_path
+    visit admin_users_path
     page.should have_content('You are not authorized!')
   end
 

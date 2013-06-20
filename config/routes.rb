@@ -1,12 +1,17 @@
 Betacritic::Application.routes.draw do
 
   devise_for :users
+
   resources :users do
     resources :likes, only: [:index]
   end
 
+  namespace :admin do
+    resources :users, only: [:index, :show]
+    resources :movies, only: [:index]
+  end
+
   resources :movies
-  resources :users, only: [:index, :show]
   resources :likes, only: [:create, :destroy]
 
   %w[admin].each do |page|

@@ -1,7 +1,7 @@
 <h2>List of users</h2>
 
 <%- @users.each do |user| %>
-  <%= link_to(user) do %>
+  <%= link_to(admin_user_path(user)) do %>
     <%= user.email %>
   <% end %>
   <br />
