@@ -1,7 +1,5 @@
 <h2>Admin dashboard</h2>
 
-<h3>List of users</h3>
-<%- @users.each do |user| %>
-  <%= user.email %>
-  <br />
-<% end %>
+<%= link_to 'User stats', admin_users_path %>
+<br />
+<%= link_to 'Movie stats', admin_movies_path %>

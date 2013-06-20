@@ -1,0 +1,17 @@
+<h2>List of movies</h2>
+
+<div class="movies">
+  <%- @movies.each do |movie| %>
+    <br />
+    <br />
+    <%= link_to(admin_movies_path(movie)) do %>
+      <%= movie.title %>
+      <%= "(#{movie.year})" %>
+    <% end %>
+
+    <%= "#{pluralize(movie.likes.count, 'like')}" %>
+    <%= "#{pluralize(movie.viewings.count, 'viewing')}" %>
+    <%= "#{pluralize(movie.reviews.count, 'review')}" %>
+
+  <% end %>
+</div>

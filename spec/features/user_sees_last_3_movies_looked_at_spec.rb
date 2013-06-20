@@ -8,9 +8,9 @@ feature 'User sees last 3 movies looked at', %{
   } do
 
   given(:user)    { FactoryGirl.create(:user) }
-  given!(:movie1)  { FactoryGirl.create(:movie, contributor: user) }
-  given!(:movie2)  { FactoryGirl.create(:movie, contributor: user) }
-  given!(:movie3)  { FactoryGirl.create(:movie, contributor: user) }
+  given!(:movie1)  { FactoryGirl.create(:movie) }
+  given!(:movie2)  { FactoryGirl.create(:movie) }
+  given!(:movie3)  { FactoryGirl.create(:movie) }
 
   background do
     Warden.test_mode!

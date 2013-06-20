@@ -50,13 +50,11 @@ feature 'Registered user signs in as admin', %{
   end
 
   scenario 'Admin sees list of user in admin dashboard' do
-    user
     visit root_path
     click_link 'Sign In'
     fill_in 'Email', with: admin.email
     fill_in 'Password', with: admin.password
     click_button 'Sign in'
-    click_link 'Admin dashboard'
-    page.should have_content(user.email)
+    page.should have_content('Admin dashboard')
   end
 end
