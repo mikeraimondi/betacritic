@@ -17,9 +17,7 @@ Betacritic::Application.routes.draw do
 
   resources :likes, only: [:create, :destroy]
 
-  %w[admin].each do |page|
-    get "/#{page}" => "pages##{page}", :as => page
-  end
+  get "/admin" => "pages#admin", as: 'admin'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
