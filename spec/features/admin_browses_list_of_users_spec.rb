@@ -33,7 +33,7 @@ feature 'Admin browses list of users', %{
     fill_in 'Password', with: admin.password
     click_button 'Sign in'
     click_link 'Admin dashboard'
-    click_link 'List of users'
+    click_link 'User stats'
     page.should have_content(user.email)
   end
 
@@ -45,7 +45,7 @@ feature 'Admin browses list of users', %{
     fill_in 'Password', with: admin.password
     click_button 'Sign in'
     click_link 'Admin dashboard'
-    click_link 'List of users'
+    click_link 'User stats'
     click_link user.email
     page.should have_content(user.email)
   end

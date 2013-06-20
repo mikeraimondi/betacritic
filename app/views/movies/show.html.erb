@@ -5,3 +5,9 @@
 <p>
   <%= @movie.year %>
 </p>
+
+<%= render 'likes/button', movie: @movie, like: @like %>
+
+<%= "#{pluralize(@movie.likes.count, 'like')}" %>
+
+<%= render 'shared/recently_added_movies' %>
