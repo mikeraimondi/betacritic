@@ -19,6 +19,13 @@ FactoryGirl.define do
     end
   end
 
+  factory :review do
+    user
+    movie
+    sequence(:body) { |n| "This movie is awesome#{n}!" }
+    rating '10'
+  end
+
   factory :like do
     user
     association :likable, factory: :movie

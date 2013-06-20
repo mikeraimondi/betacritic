@@ -13,6 +13,8 @@ feature 'Admin sees stats on movies', %{
   given(:viewing1) { FactoryGirl.create(:viewing, viewable: movie) }
   given(:viewing2) { FactoryGirl.create(:viewing, viewable: movie) }
   given(:viewing3) { FactoryGirl.create(:viewing, viewable: movie) }
+  given(:review1) { FactoryGirl.create(:review, movie: movie) }
+  given(:review2) { FactoryGirl.create(:review, movie: movie) }
   given(:like1) { FactoryGirl.create(:like, likable: movie) }
   given(:like2) { FactoryGirl.create(:like, likable: movie) }
 
@@ -43,7 +45,19 @@ feature 'Admin sees stats on movies', %{
     page.should have_content(movie.title)
   end
 
-  scenario 'Admin sees how many reviews a movie has'
+  scenario 'Admin sees how many reviews a movie has' do
+    movie
+    review1
+    review2
+    visit root_path
+    click_link 'Sign In'
+    fill_in 'Email', with: admin.email
+    fill_in 'Password', with: admin.password
+    click_button 'Sign in'
+    click_link 'Admin dashboard'
+    click_link 'Movie stats'
+    page.should have_content('2 reviews')
+  end
 
   scenario 'Admin sees how many likes a movie has' do
     movie
