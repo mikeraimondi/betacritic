@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(:version => 20130618204719) do
     t.datetime "updated_at",     :null => false
   end
 
+  create_table "reviews", :force => true do |t|
+    t.text     "body",       :null => false
+    t.integer  "rating",     :null => false
+    t.integer  "user_id",    :null => false
+    t.integer  "movie_id",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",     :null => false
     t.string   "encrypted_password",     :default => "",     :null => false
