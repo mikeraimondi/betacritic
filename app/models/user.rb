@@ -51,8 +51,12 @@ class User < ActiveRecord::Base
     like_for(movie).present?
   end
 
-  # def liked_movies
-  #   likes.where('likable_type = ?', 'Movie')
-  # end
+  def like_for_review(review)
+    likes.where("likable_id = ? AND likable_type = 'Review'", review.id).first
+  end
+
+  def likes_review?(review)
+    like_for_review(review).present?
+  end
 
 end

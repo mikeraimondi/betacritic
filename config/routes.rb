@@ -9,6 +9,7 @@ Betacritic::Application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :show]
     resources :movies, only: [:index]
+    resources :reviews, only: [:index]
   end
 
   resources :movies do
