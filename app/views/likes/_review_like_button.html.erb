@@ -1,0 +1,11 @@
+<%- if user_signed_in? -%>
+  <%= simple_form_for(like) do |f| %>
+    <%- if current_user.likes_review?(review) -%>
+      <%= link_to 'Unlike review', like_path(current_user.like_for_review(review).id), method: :delete %>
+    <%- else -%>
+      <%= f.hidden_field :likable_id, value: review.id %>
+      <%= f.hidden_field :likable_type, value: 'Review' %>
+      <%= f.submit 'Like review' %>
+    <%- end -%>
+  <%- end -%>
+<%- end -%>
