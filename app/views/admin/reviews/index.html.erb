@@ -1,0 +1,7 @@
+<h2>List of reviews</h2>
+
+<%- @reviews.each do |review| %>
+  <%= "Review for #{review.movie.title}:" %>
+  <%= review.body %>
+  <%= "#{pluralize(review.likes.count, 'like')}" %>
+<% end %>

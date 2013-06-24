@@ -37,8 +37,12 @@ feature 'User likes a movie', %{
     fill_in 'Title', :with => 'Mulan'
     fill_in 'Year', :with => '1996'
     click_button 'Enter'
-    click_button 'Like movie'
-    page.should have_content('1 like')
+    within('.movie_likes') do
+      click_button 'Like movie'
+    end
+    within('.movie_likes') do
+      page.should have_content('1 like')
+    end
   end
 
   scenario 'Signed in user can see a list of all the movies they liked'
