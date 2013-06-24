@@ -34,6 +34,8 @@ GEM
     better_errors (0.7.2)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bootstrap-sass (2.2.2.0)
+      sass (~> 3.2)
     builder (3.0.4)
     cancan (1.6.10)
     capybara (2.1.0)
@@ -73,6 +75,10 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    flatui-rails (0.0.4)
+      bootstrap-sass (= 2.2.2)
+      railties (>= 3.1)
+      sass-rails (>= 3.2.0)
     fssm (0.2.10)
     hike (1.2.3)
     i18n (0.6.1)
@@ -180,6 +186,7 @@ DEPENDENCIES
   compass-rails
   devise
   factory_girl_rails
+  flatui-rails
   jquery-rails
   launchy
   pg

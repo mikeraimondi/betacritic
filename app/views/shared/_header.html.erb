@@ -1,12 +1,13 @@
-<%= link_to 'BetaCritiq', root_path, :class => 'logo' %>
+<ul class="nav">
+  <li><%= link_to 'BetaCritiq', root_path, :class => 'logo' %></li>
 
-<%- if user_signed_in? %>
-  <%= link_to 'Update account', edit_user_registration_path %>
-  <%- if current_user.admin? %>
-    <%= link_to 'Admin dashboard', admin_path %>
-  <% end %>
-  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-<%- else %>
-  <%= link_to 'Sign Up', new_user_registration_path %>
-  <%= link_to 'Sign In', new_user_session_path %>
-<%- end %>
+  <%- if user_signed_in? %>
+    <li><%= link_to 'Update account', edit_user_registration_path %></li>
+    <%- if current_user.admin? %>
+      <li><%= link_to 'Admin dashboard', admin_path %></li>
+    <% end %>
+    <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+  <%- else %>
+    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+    <li><%= link_to 'Sign In', new_user_session_path %></li>
+  <%- end %>

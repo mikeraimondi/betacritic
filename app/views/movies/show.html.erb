@@ -11,18 +11,20 @@
   <%= "#{pluralize(@movie.likes.count, 'like')}" %>
 </div>
 
-<div class='review_likes'>
-  <%= render 'reviews/form' %>
-  <p>
-    <% @movie.reviews.each do |review| %>
-      <p>
-      <%= review.body %>
-      <%= review.rating %>
-      <%= render 'likes/review_like_button', review: review, like: @like %>
-      <%= "#{pluralize(review.likes.count, 'like')}" %>
-      </p>
-    <% end %>
-  </p>
-</div>
+<% if user_signed_in? %>
+  <div class='review_likes'>
+    <%= render 'reviews/form' %>
+    <p>
+      <% @movie.reviews.each do |review| %>
+        <p>
+        <%= review.body %>
+        <%= review.rating %>
+        <%= render 'likes/review_like_button', review: review, like: @like %>
+        <%= "#{pluralize(review.likes.count, 'like')}" %>
+        </p>
+      <% end %>
+    </p>
+  </div>
+<% end %>
 
 <%= render 'shared/recently_added_movies' %>
