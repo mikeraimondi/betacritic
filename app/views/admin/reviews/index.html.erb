@@ -1,9 +1,7 @@
 <h2>List of reviews</h2>
 
 <%- @reviews.each do |review| %>
-  <br />
-  <br />
-  <%= link_to(admin_reviews_path(review)) do %>
-    <%= review.body %>
-  <% end %>
+  <%= "Review for #{review.movie.title}:" %>
+  <%= review.body %>
+  <%= review.likes.count %>
 <% end %>
