@@ -1,6 +1,7 @@
 <%= link_to 'BetaCritiq', root_path, :class => 'logo' %>
 
 <%- if user_signed_in? %>
+  <%= link_to 'Update account', edit_user_registration_path %>
   <%- if current_user.admin? %>
     <%= link_to 'Admin dashboard', admin_path %>
   <% end %>
