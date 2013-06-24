@@ -3,5 +3,5 @@
 <%- @reviews.each do |review| %>
   <%= "Review for #{review.movie.title}:" %>
   <%= review.body %>
-  <%= review.likes.count %>
+  <%= "#{pluralize(review.likes.count, 'like')}" %>
 <% end %>
